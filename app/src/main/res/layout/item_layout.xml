@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fons"
     android:padding="10dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:backgroundTint="@color/lilaFosc"
         app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/item"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/lilaFosc"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/movieInfo"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="2"
                 android:orientation="horizontal"
                 android:padding="15dp">
 
@@ -33,6 +40,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="8dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -42,7 +51,7 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="Interstellar"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -50,7 +59,7 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text=" - "
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/movieYear"
@@ -59,7 +68,7 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="2014"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -68,35 +77,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ciencia Ficción"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <LinearLayout
+                <ImageButton
+                    android:id="@+id/buttonSave"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    >
-
-                    <ImageButton
-                        android:id="@+id/buttonSave"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="Botó per a dessar pel·licula a la llista de desades"
-                        android:src="@drawable/baseline_bookmark_border"
-                        app:tint="@color/purple" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Dessar pel·licula"
+                    android:src="@drawable/baseline_bookmark_border"
+                    app:tint="@color/purple" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="end|center_vertical"
                 android:scaleType="centerCrop"
                 android:src="@drawable/Interstellar" />
-        </FrameLayout>
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
