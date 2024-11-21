@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Flicker" parent="Base.Theme.Flicker" />
+    <style name="Theme.Flicker.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Flicker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Flicker.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
