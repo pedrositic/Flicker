@@ -1,0 +1,6 @@
+<resources>
+    <attr name="colorAccent" format="color" />
+    <attr name="colorOnAccent" format="color" />
+    <attr name="colorAccentContainer" format="color" />
+    <attr name="colorOnAccentContainer" format="color" />
+</resources>
