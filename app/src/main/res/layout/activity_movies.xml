@@ -7,34 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".Movies">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/buscador">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Menu navegacio"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
+    <fragment
+        android:id="@+id/buscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:name="com.example.flicker.Buscador"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_header"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/footer"
         app:layout_constraintTop_toBottomOf="@id/buscador">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <LinearLayout
+    <fragment
+        android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Menu navegacio"
-            android:gravity="center"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:name="com.example.flicker.Footer"
+        tools:layout="@layout/fragment_footer"
+        app:layout_constraintTop_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
