@@ -16,7 +16,7 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".Perfil"
+            android:name=".Movies"
             android:exported="false" />
         <activity
             android:name=".Register"

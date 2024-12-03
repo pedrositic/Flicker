@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@color/fons"
     android:padding="16dp">
 
     <!-- Barra de búsqueda -->
@@ -14,12 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="Buscar..."
-        android:background="@color/gray"
-        android:drawableStart="@drawable/ic_search"
         android:drawablePadding="8dp"
         android:padding="12dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/gray_hint"
         android:inputType="text" />
 
     <!-- Botón de buscar -->
@@ -28,8 +23,6 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:src="@drawable/ic_search"
         android:contentDescription="Buscar"
-        android:background="@color/gray"
         android:padding="12dp" />
 </LinearLayout>
