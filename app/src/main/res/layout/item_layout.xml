@@ -51,7 +51,6 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="Interstellar"
-                            android:textColor="@color/md_theme_primary"
                             android:textSize="18sp" />
 
                         <TextView
@@ -59,7 +58,6 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text=" - "
-                            android:textColor="@color/md_theme_primary"
                             android:textSize="18sp" />
 
                         <TextView
@@ -68,7 +66,6 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="2014"
-                            android:textColor="@color/md_theme_primary"
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -78,7 +75,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ciencia Ficción"
-                        android:textColor="@color/md_theme_primary"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -89,7 +85,7 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="Dessar pel·licula"
                     android:src="@drawable/baseline_bookmark_border"
-                    app:tint="@color/md_theme_onPrimary" />
+                    app:tint="@color/md_theme_primary" />
 
             </LinearLayout>
 

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/fons"
     tools:context=".Profile">
 
     <!-- Imagen del perfil (provisional) -->
@@ -37,7 +36,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Paco"
-            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -56,7 +54,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dark mode"
-            android:textColor="@color/white"
             android:paddingRight="43dp"
             android:textSize="16sp" />
 
@@ -65,8 +62,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:thumbTint="@color/lilaClar"
-            android:trackTint="@color/white"
             tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
     </LinearLayout>
 
@@ -84,7 +79,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Color Botons"
-            android:textColor="@color/white"
             android:gravity="center"
             android:paddingRight="40dp"
             android:textSize="16sp" />
@@ -93,7 +87,7 @@
             android:id="@+id/colorView"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@color/lilaClar" />
+            android:background="@color/md_theme_onPrimary" />
     </LinearLayout>
 
 </LinearLayout>
