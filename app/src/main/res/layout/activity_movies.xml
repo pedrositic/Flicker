@@ -19,8 +19,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/footer"
-        app:layout_constraintTop_toBottomOf="@id/buscador">
+        android:padding="25dp"
+        app:layout_constraintTop_toBottomOf="@id/buscador"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        >
 
     </androidx.recyclerview.widget.RecyclerView>
 
