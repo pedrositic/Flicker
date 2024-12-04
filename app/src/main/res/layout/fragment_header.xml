@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:background="@drawable/rounded_button"
+    android:layout_margin="16dp"
+    android:gravity="center_horizontal">
 
     <!-- Botón de buscar -->
     <ImageView
         android:id="@+id/ivSearch"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_margin="8dp"
         android:src="@drawable/ic_search"
         android:contentDescription="Buscar"
-        android:background="@color/md_theme_surfaceVariant"
         android:padding="10dp"
         app:tint="@color/md_theme_primary" />
 
@@ -25,9 +26,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="8dp"
         android:hint="Buscar..."
         android:drawablePadding="8dp"
         android:padding="12dp"
-        android:background="@color/md_theme_surfaceVariant"
         android:inputType="text" />
 </LinearLayout>
