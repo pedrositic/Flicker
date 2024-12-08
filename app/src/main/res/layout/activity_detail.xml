@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".Detail">
 
+    <!-- Buscador -->
+    <fragment
+        android:id="@+id/buscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.flicker.Buscador"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_header"
+        android:layout_margin="16dp" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -140,6 +150,15 @@
         android:scaleType="centerCrop"
         android:src="@drawable/interstellar_banner"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Footer -->
+    <fragment
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.flicker.Footer"
+        tools:layout="@layout/fragment_footer"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

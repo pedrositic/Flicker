@@ -1,93 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Profile">
 
-    <!-- Imagen del perfil (provisional) -->
+    <!-- Contenido principal -->
     <LinearLayout
+        android:id="@+id/mainContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/footer"
+        android:layout_marginBottom="16dp">
 
-        <ImageView
-            android:id="@+id/ivProfilePicture"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/koala"
-            android:background="@drawable/circular_image"
-            android:scaleType="centerCrop"
-            android:clipToOutline="true" />
-    </LinearLayout>
-
-    <!-- Nombre del usuario -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="8dp">
-
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="wrap_content"
+        <!-- Imagen del perfil (provisional) -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Paco"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- Switch de Dark Mode -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="40dp"
-        android:paddingHorizontal="32dp">
-
-        <TextView
-            android:id="@+id/tvDarkMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dark mode"
-            android:paddingRight="43dp"
-            android:textSize="16sp" />
-
-        <Switch
-            android:id="@+id/switchDarkMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
-    </LinearLayout>
-
-    <!-- Selector de color -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="24dp"
-        android:paddingHorizontal="32dp">
-
-        <TextView
-            android:id="@+id/tvColorButtons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Color Botons"
             android:gravity="center"
-            android:paddingRight="40dp"
-            android:textSize="16sp" />
+            android:layout_marginTop="16dp">
 
-        <View
-            android:id="@+id/colorView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@color/md_theme_onPrimary" />
+            <ImageView
+                android:id="@+id/ivProfilePicture"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/koala"
+                android:background="@drawable/circular_image"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true" />
+        </LinearLayout>
+
+        <!-- Nombre del usuario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Switch de Dark Mode -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="40dp"
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:id="@+id/tvDarkMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark mode"
+                android:paddingRight="43dp"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/switchDarkMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <!-- Selector de color -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:id="@+id/tvColorButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Botons"
+                android:gravity="center"
+                android:paddingRight="40dp"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/colorView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/md_theme_onPrimary" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <!-- Footer -->
+    <fragment
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.flicker.Footer"
+        tools:layout="@layout/fragment_footer"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
