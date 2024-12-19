@@ -9,12 +9,12 @@
 
     <fragment
         android:id="@+id/buscador"
+        android:name="com.example.flicker.Buscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.example.flicker.Buscador"
+        android:layout_margin="16dp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_header"
-        android:layout_margin="16dp"/>
+        tools:layout="@layout/fragment_header" />
 
     <HorizontalScrollView
         android:id="@+id/filters"
@@ -78,24 +78,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="25dp"
-        app:layout_constraintTop_toBottomOf="@id/filters">
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@id/filters" />
 
     <fragment
         android:id="@+id/item"
         android:name="com.example.flicker.Item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout="@layout/item_layout"
         app:layout_constraintTop_toBottomOf="@id/recyclerView"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout="@layout/item_layout" />
 
-    <fragment
-        android:id="@+id/footer"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.example.flicker.Footer"
-        tools:layout="@layout/fragment_footer"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:src="@drawable/ic_home"
+        android:src="@drawable/ic_home_border"
         android:contentDescription="Home"
         android:padding="5dp"
         app:tint="@color/md_theme_primary"
@@ -39,7 +39,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
-        android:src="@drawable/ic_profile"
+        android:src="@drawable/ic_profile_border"
         android:contentDescription="Profile"
         android:padding="5dp"
         app:tint="@color/md_theme_primary" />
