@@ -20,31 +20,33 @@ class Movies : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_movies)
 
-        var rv: RecyclerView = findViewById(R.id.recyclerView)
-        var llistatreserves = MovieProvider.Movies
-
-        rv.layoutManager = LinearLayoutManager(this)
-        rv.adapter = MovieAdapter(llistatreserves)
+        // Inicialmente carga el fragmento principal
+        if (savedInstanceState == null) {
+            loadFragment(list())
+        }
 
         val menu = findViewById<BottomNavigationView>(R.id.menu_bottom)
         menu.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_home -> {
-                    val intent = Intent(this, Movies::class.java)
-                    startActivity(intent)
+                    loadFragment(list())
                 }
 
                 R.id.bottom_save -> {
-                    val intent = Intent(this, Desats::class.java)
-                    startActivity(intent)
+                   loadFragment(fragment_desats())
                 }
 
                 R.id.bottom_profile -> {
-                    val intent = Intent(this, Profile::class.java)
-                    startActivity(intent)
+                    loadFragment(fragment_desats())
                 }
             }
             true
         }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.commit()
     }
 }

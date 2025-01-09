@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Desats">
 
-    <!-- Buscador -->
-    <fragment
-        android:id="@+id/buscador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.flicker.Buscador"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_header"
-        android:layout_margin="16dp" />
-
     <!-- Título de la pantalla -->
     <TextView
         android:id="@+id/tvTitle"
@@ -27,7 +17,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/md_theme_primary"
-        app:layout_constraintTop_toBottomOf="@id/buscador"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -37,16 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintBottom_toTopOf="@id/footer" />
-
-    <!-- Footer -->
-    <fragment
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.flicker.Footer"
-        tools:layout="@layout/fragment_footer"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

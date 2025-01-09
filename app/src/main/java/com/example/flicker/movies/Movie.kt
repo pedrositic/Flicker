@@ -12,6 +12,7 @@ data class Movie(
 class MovieProvider {
 
     companion object {
+        @JvmStatic
         val Movies: List<Movie> = listOf(
             Movie(
                 idMovie = 1,
