@@ -1,10 +1,14 @@
 package com.example.flicker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.flicker.movies.MovieAdapter
+import com.example.flicker.movies.MovieProvider.Companion.Movies
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +17,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [fragment_desats.newInstance] factory method to
+ * Use the [fragment_movies_list.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragment_desats : Fragment() {
+class fragment_movies_list : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +38,11 @@ class fragment_desats : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_desats, container, false)
+        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        val rv = view.findViewById<RecyclerView>(R.id.recyclerView)
+        rv.layoutManager = LinearLayoutManager(context)
+        rv.adapter = MovieAdapter(Movies)
+        return view
     }
 
     companion object {
@@ -44,12 +52,12 @@ class fragment_desats : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_desats.
+         * @return A new instance of fragment fragment_movies_list.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            fragment_desats().apply {
+            fragment_movies_list().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

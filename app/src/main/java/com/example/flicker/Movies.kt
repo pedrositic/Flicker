@@ -22,14 +22,14 @@ class Movies : AppCompatActivity() {
 
         // Inicialmente carga el fragmento principal
         if (savedInstanceState == null) {
-            loadFragment(list())
+            loadFragment(fragment_movies_list())
         }
 
         val menu = findViewById<BottomNavigationView>(R.id.menu_bottom)
         menu.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_home -> {
-                    loadFragment(list())
+                    loadFragment(fragment_movies_list())
                 }
 
                 R.id.bottom_save -> {
