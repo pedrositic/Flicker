@@ -37,7 +37,7 @@ class Movies : AppCompatActivity() {
                 }
 
                 R.id.bottom_profile -> {
-                    loadFragment(fragment_desats())
+                    loadFragment(fragment_profile())
                 }
             }
             true
