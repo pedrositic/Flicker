@@ -46,11 +46,14 @@
 
                         <TextView
                             android:id="@+id/movieTitle"
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Interstellar"
-                            android:textSize="18sp" />
+                            android:text="The Shawshank Redemption"
+                            android:textSize="18sp"
+                            android:maxLength="19"
+                            android:ellipsize="end"
+                            android:singleLine="true" />
 
                         <TextView
                             android:layout_width="wrap_content"

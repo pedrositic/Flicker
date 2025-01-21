@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flicker.movies.MovieAdapter
-import com.example.flicker.movies.MovieProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Movies : AppCompatActivity() {

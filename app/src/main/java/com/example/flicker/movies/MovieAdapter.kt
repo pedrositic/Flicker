@@ -26,7 +26,6 @@ class MovieAdapter(var llistaMovies: List<Movie>) : RecyclerView.Adapter<MovieAd
     }
 }
 
-
 class MovieAdapterHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var titol: TextView = itemView.findViewById(R.id.movieTitle)
     var year: TextView = itemView.findViewById(R.id.movieYear)
