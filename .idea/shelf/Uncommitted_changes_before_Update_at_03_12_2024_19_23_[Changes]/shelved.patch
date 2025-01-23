@@ -1,0 +1,440 @@
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Base.Theme.Flicker\" parent=\"Theme.Material3.DayNight.NoActionBar\">\r\n        <!-- Customize your dark theme here. -->\r\n        <!-- <item name=\"colorPrimary\">@color/my_dark_primary</item> -->\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+--- a/app/src/main/res/values-night/themes.xml	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
++++ b/app/src/main/res/values-night/themes.xml	(date 1732811190355)
+@@ -3,5 +3,55 @@
+     <style name="Base.Theme.Flicker" parent="Theme.Material3.DayNight.NoActionBar">
+         <!-- Customize your dark theme here. -->
+         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
++        <item name="colorPrimary">@color/md_theme_primary</item>
++        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
++        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
++        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
++        <item name="colorSecondary">@color/md_theme_secondary</item>
++        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
++        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
++        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
++        <item name="colorTertiary">@color/md_theme_tertiary</item>
++        <item name="colorOnTertiary">@color/md_theme_onTertiary</item>
++        <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
++        <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
++        <item name="colorError">@color/md_theme_error</item>
++        <item name="colorOnError">@color/md_theme_onError</item>
++        <item name="colorErrorContainer">@color/md_theme_errorContainer</item>
++        <item name="colorOnErrorContainer">@color/md_theme_onErrorContainer</item>
++        <item name="android:colorBackground">@color/md_theme_background</item>
++        <item name="colorOnBackground">@color/md_theme_onBackground</item>
++        <item name="colorSurface">@color/md_theme_surface</item>
++        <item name="colorOnSurface">@color/md_theme_onSurface</item>
++        <item name="colorSurfaceVariant">@color/md_theme_surfaceVariant</item>
++        <item name="colorOnSurfaceVariant">@color/md_theme_onSurfaceVariant</item>
++        <item name="colorOutline">@color/md_theme_outline</item>
++        <item name="colorOutlineVariant">@color/md_theme_outlineVariant</item>
++        <item name="colorSurfaceInverse">@color/md_theme_inverseSurface</item>
++        <item name="colorOnSurfaceInverse">@color/md_theme_inverseOnSurface</item>
++        <item name="colorPrimaryInverse">@color/md_theme_inversePrimary</item>
++        <item name="colorPrimaryFixed">@color/md_theme_primaryFixed</item>
++        <item name="colorOnPrimaryFixed">@color/md_theme_onPrimaryFixed</item>
++        <item name="colorPrimaryFixedDim">@color/md_theme_primaryFixedDim</item>
++        <item name="colorOnPrimaryFixedVariant">@color/md_theme_onPrimaryFixedVariant</item>
++        <item name="colorSecondaryFixed">@color/md_theme_secondaryFixed</item>
++        <item name="colorOnSecondaryFixed">@color/md_theme_onSecondaryFixed</item>
++        <item name="colorSecondaryFixedDim">@color/md_theme_secondaryFixedDim</item>
++        <item name="colorOnSecondaryFixedVariant">@color/md_theme_onSecondaryFixedVariant</item>
++        <item name="colorTertiaryFixed">@color/md_theme_tertiaryFixed</item>
++        <item name="colorOnTertiaryFixed">@color/md_theme_onTertiaryFixed</item>
++        <item name="colorTertiaryFixedDim">@color/md_theme_tertiaryFixedDim</item>
++        <item name="colorOnTertiaryFixedVariant">@color/md_theme_onTertiaryFixedVariant</item>
++        <item name="colorSurfaceDim">@color/md_theme_surfaceDim</item>
++        <item name="colorSurfaceBright">@color/md_theme_surfaceBright</item>
++        <item name="colorSurfaceContainerLowest">@color/md_theme_surfaceContainerLowest</item>
++        <item name="colorSurfaceContainerLow">@color/md_theme_surfaceContainerLow</item>
++        <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
++        <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
++        <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
++        <item name="colorAccent">@color/colorAccent</item>
++        <item name="colorOnAccent">@color/colorOnAccent</item>
++        <item name="colorAccentContainer">@color/colorAccentContainer</item>
++        <item name="colorOnAccentContainer">@color/colorOnAccentContainer</item>
+     </style>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n    <color name=\"fons\">#0F0D13</color>\r\n    <color name=\"lilaFosc\">#36343B</color>\r\n    <color name=\"lilaClar\">#D0BCFE</color>\r\n    <color name=\"purple\">#4F378B</color>\r\n    <color name=\"gray_light\">#2E2E2E</color>\r\n    <color name=\"gray\">#424242</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
++++ b/app/src/main/res/values/colors.xml	(date 1732810473065)
+@@ -8,4 +8,157 @@
+     <color name="purple">#4F378B</color>
+     <color name="gray_light">#2E2E2E</color>
+     <color name="gray">#424242</color>
++    <color name="md_theme_primary">#66558F</color>
++    <color name="md_theme_onPrimary">#FFFFFF</color>
++    <color name="md_theme_primaryContainer">#D6C4FF</color>
++    <color name="md_theme_onPrimaryContainer">#413168</color>
++    <color name="md_theme_secondary">#625A73</color>
++    <color name="md_theme_onSecondary">#FFFFFF</color>
++    <color name="md_theme_secondaryContainer">#EADFFD</color>
++    <color name="md_theme_onSecondaryContainer">#4C455D</color>
++    <color name="md_theme_tertiary">#66558F</color>
++    <color name="md_theme_onTertiary">#FFFFFF</color>
++    <color name="md_theme_tertiaryContainer">#D6C4FF</color>
++    <color name="md_theme_onTertiaryContainer">#413168</color>
++    <color name="md_theme_error">#BA1A1A</color>
++    <color name="md_theme_onError">#FFFFFF</color>
++    <color name="md_theme_errorContainer">#FFDAD6</color>
++    <color name="md_theme_onErrorContainer">#410002</color>
++    <color name="md_theme_background">#FDF8FD</color>
++    <color name="md_theme_onBackground">#1C1B1F</color>
++    <color name="md_theme_surface">#FDF8FD</color>
++    <color name="md_theme_onSurface">#1C1B1F</color>
++    <color name="md_theme_surfaceVariant">#E7E0EC</color>
++    <color name="md_theme_onSurfaceVariant">#49454F</color>
++    <color name="md_theme_outline">#7A7580</color>
++    <color name="md_theme_outlineVariant">#CAC4D0</color>
++    <color name="md_theme_scrim">#000000</color>
++    <color name="md_theme_inverseSurface">#323034</color>
++    <color name="md_theme_inverseOnSurface">#F5EFF5</color>
++    <color name="md_theme_inversePrimary">#D0BCFE</color>
++    <color name="md_theme_primaryFixed">#E9DDFF</color>
++    <color name="md_theme_onPrimaryFixed">#210F47</color>
++    <color name="md_theme_primaryFixedDim">#D0BCFE</color>
++    <color name="md_theme_onPrimaryFixedVariant">#4E3D75</color>
++    <color name="md_theme_secondaryFixed">#E9DEFB</color>
++    <color name="md_theme_onSecondaryFixed">#1E182D</color>
++    <color name="md_theme_secondaryFixedDim">#CCC2DF</color>
++    <color name="md_theme_onSecondaryFixedVariant">#4A435B</color>
++    <color name="md_theme_tertiaryFixed">#E9DDFF</color>
++    <color name="md_theme_onTertiaryFixed">#210F47</color>
++    <color name="md_theme_tertiaryFixedDim">#D0BCFE</color>
++    <color name="md_theme_onTertiaryFixedVariant">#4E3D75</color>
++    <color name="md_theme_surfaceDim">#DED8DE</color>
++    <color name="md_theme_surfaceBright">#FDF8FD</color>
++    <color name="md_theme_surfaceContainerLowest">#FFFFFF</color>
++    <color name="md_theme_surfaceContainerLow">#F8F2F8</color>
++    <color name="md_theme_surfaceContainer">#F2ECF2</color>
++    <color name="md_theme_surfaceContainerHigh">#ECE6EC</color>
++    <color name="md_theme_surfaceContainerHighest">#E6E1E6</color>
++    <color name="md_theme_primary_mediumContrast">#493971</color>
++    <color name="md_theme_onPrimary_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_primaryContainer_mediumContrast">#7C6BA7</color>
++    <color name="md_theme_onPrimaryContainer_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_secondary_mediumContrast">#463F57</color>
++    <color name="md_theme_onSecondary_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryContainer_mediumContrast">#79708A</color>
++    <color name="md_theme_onSecondaryContainer_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_tertiary_mediumContrast">#493971</color>
++    <color name="md_theme_onTertiary_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryContainer_mediumContrast">#7C6BA7</color>
++    <color name="md_theme_onTertiaryContainer_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_error_mediumContrast">#8C0009</color>
++    <color name="md_theme_onError_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_errorContainer_mediumContrast">#DA342E</color>
++    <color name="md_theme_onErrorContainer_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_background_mediumContrast">#FDF8FD</color>
++    <color name="md_theme_onBackground_mediumContrast">#1C1B1F</color>
++    <color name="md_theme_surface_mediumContrast">#FDF8FD</color>
++    <color name="md_theme_onSurface_mediumContrast">#1C1B1F</color>
++    <color name="md_theme_surfaceVariant_mediumContrast">#E7E0EC</color>
++    <color name="md_theme_onSurfaceVariant_mediumContrast">#45414B</color>
++    <color name="md_theme_outline_mediumContrast">#625D67</color>
++    <color name="md_theme_outlineVariant_mediumContrast">#7E7983</color>
++    <color name="md_theme_scrim_mediumContrast">#000000</color>
++    <color name="md_theme_inverseSurface_mediumContrast">#323034</color>
++    <color name="md_theme_inverseOnSurface_mediumContrast">#F5EFF5</color>
++    <color name="md_theme_inversePrimary_mediumContrast">#D0BCFE</color>
++    <color name="md_theme_primaryFixed_mediumContrast">#7C6BA7</color>
++    <color name="md_theme_onPrimaryFixed_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_primaryFixedDim_mediumContrast">#63528C</color>
++    <color name="md_theme_onPrimaryFixedVariant_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryFixed_mediumContrast">#79708A</color>
++    <color name="md_theme_onSecondaryFixed_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryFixedDim_mediumContrast">#605871</color>
++    <color name="md_theme_onSecondaryFixedVariant_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryFixed_mediumContrast">#7C6BA7</color>
++    <color name="md_theme_onTertiaryFixed_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryFixedDim_mediumContrast">#63528C</color>
++    <color name="md_theme_onTertiaryFixedVariant_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_surfaceDim_mediumContrast">#DED8DE</color>
++    <color name="md_theme_surfaceBright_mediumContrast">#FDF8FD</color>
++    <color name="md_theme_surfaceContainerLowest_mediumContrast">#FFFFFF</color>
++    <color name="md_theme_surfaceContainerLow_mediumContrast">#F8F2F8</color>
++    <color name="md_theme_surfaceContainer_mediumContrast">#F2ECF2</color>
++    <color name="md_theme_surfaceContainerHigh_mediumContrast">#ECE6EC</color>
++    <color name="md_theme_surfaceContainerHighest_mediumContrast">#E6E1E6</color>
++    <color name="md_theme_primary_highContrast">#28174E</color>
++    <color name="md_theme_onPrimary_highContrast">#FFFFFF</color>
++    <color name="md_theme_primaryContainer_highContrast">#493971</color>
++    <color name="md_theme_onPrimaryContainer_highContrast">#FFFFFF</color>
++    <color name="md_theme_secondary_highContrast">#251F34</color>
++    <color name="md_theme_onSecondary_highContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryContainer_highContrast">#463F57</color>
++    <color name="md_theme_onSecondaryContainer_highContrast">#FFFFFF</color>
++    <color name="md_theme_tertiary_highContrast">#28174E</color>
++    <color name="md_theme_onTertiary_highContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryContainer_highContrast">#493971</color>
++    <color name="md_theme_onTertiaryContainer_highContrast">#FFFFFF</color>
++    <color name="md_theme_error_highContrast">#4E0002</color>
++    <color name="md_theme_onError_highContrast">#FFFFFF</color>
++    <color name="md_theme_errorContainer_highContrast">#8C0009</color>
++    <color name="md_theme_onErrorContainer_highContrast">#FFFFFF</color>
++    <color name="md_theme_background_highContrast">#FDF8FD</color>
++    <color name="md_theme_onBackground_highContrast">#1C1B1F</color>
++    <color name="md_theme_surface_highContrast">#FDF8FD</color>
++    <color name="md_theme_onSurface_highContrast">#000000</color>
++    <color name="md_theme_surfaceVariant_highContrast">#E7E0EC</color>
++    <color name="md_theme_onSurfaceVariant_highContrast">#25222B</color>
++    <color name="md_theme_outline_highContrast">#45414B</color>
++    <color name="md_theme_outlineVariant_highContrast">#45414B</color>
++    <color name="md_theme_scrim_highContrast">#000000</color>
++    <color name="md_theme_inverseSurface_highContrast">#323034</color>
++    <color name="md_theme_inverseOnSurface_highContrast">#FFFFFF</color>
++    <color name="md_theme_inversePrimary_highContrast">#F2E8FF</color>
++    <color name="md_theme_primaryFixed_highContrast">#493971</color>
++    <color name="md_theme_onPrimaryFixed_highContrast">#FFFFFF</color>
++    <color name="md_theme_primaryFixedDim_highContrast">#332259</color>
++    <color name="md_theme_onPrimaryFixedVariant_highContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryFixed_highContrast">#463F57</color>
++    <color name="md_theme_onSecondaryFixed_highContrast">#FFFFFF</color>
++    <color name="md_theme_secondaryFixedDim_highContrast">#30293F</color>
++    <color name="md_theme_onSecondaryFixedVariant_highContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryFixed_highContrast">#493971</color>
++    <color name="md_theme_onTertiaryFixed_highContrast">#FFFFFF</color>
++    <color name="md_theme_tertiaryFixedDim_highContrast">#332259</color>
++    <color name="md_theme_onTertiaryFixedVariant_highContrast">#FFFFFF</color>
++    <color name="md_theme_surfaceDim_highContrast">#DED8DE</color>
++    <color name="md_theme_surfaceBright_highContrast">#FDF8FD</color>
++    <color name="md_theme_surfaceContainerLowest_highContrast">#FFFFFF</color>
++    <color name="md_theme_surfaceContainerLow_highContrast">#F8F2F8</color>
++    <color name="md_theme_surfaceContainer_highContrast">#F2ECF2</color>
++    <color name="md_theme_surfaceContainerHigh_highContrast">#ECE6EC</color>
++    <color name="md_theme_surfaceContainerHighest_highContrast">#E6E1E6</color>
++    <color name="colorAccent">#250360</color>
++    <color name="colorOnAccent">#FFFFFF</color>
++    <color name="colorAccentContainer">#472E81</color>
++    <color name="colorOnAccentContainer">#DBCBFF</color>
++    <color name="colorAccent_mediumContrast">#250360</color>
++    <color name="colorOnAccent_mediumContrast">#FFFFFF</color>
++    <color name="colorAccentContainer_mediumContrast">#472E81</color>
++    <color name="colorOnAccentContainer_mediumContrast">#FFFFFF</color>
++    <color name="colorAccent_highContrast">#250360</color>
++    <color name="colorOnAccent_highContrast">#FFFFFF</color>
++    <color name="colorAccentContainer_highContrast">#472E81</color>
++    <color name="colorOnAccentContainer_highContrast">#FFFFFF</color>
+ </resources>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]/shelved.patch	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
++++ /dev/null	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
+@@ -1,118 +0,0 @@
+-Index: gradle/libs.versions.toml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>[versions]\r\nagp = \"8.6.0\"\r\nkotlin = \"1.9.0\"\r\ncoreKtx = \"1.15.0\"\r\njunit = \"4.13.2\"\r\njunitVersion = \"1.2.1\"\r\nespressoCore = \"3.6.1\"\r\nappcompat = \"1.7.0\"\r\nmaterial = \"1.12.0\"\r\nactivity = \"1.9.3\"\r\nconstraintlayout = \"2.2.0\"\r\n\r\n[libraries]\r\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\r\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\r\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\r\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\r\nandroidx-appcompat = { group = \"androidx.appcompat\", name = \"appcompat\", version.ref = \"appcompat\" }\r\nmaterial = { group = \"com.google.android.material\", name = \"material\", version.ref = \"material\" }\r\nandroidx-activity = { group = \"androidx.activity\", name = \"activity\", version.ref = \"activity\" }\r\nandroidx-constraintlayout = { group = \"androidx.constraintlayout\", name = \"constraintlayout\", version.ref = \"constraintlayout\" }\r\n\r\n[plugins]\r\nandroid-application = { id = \"com.android.application\", version.ref = \"agp\" }\r\nkotlin-android = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+---- a/gradle/libs.versions.toml	(revision eb920c67cccbfaf99660eb80902396152e173488)
+-+++ b/gradle/libs.versions.toml	(date 1732203684297)
+-@@ -1,5 +1,5 @@
+- [versions]
+--agp = "8.6.0"
+-+agp = "8.7.2"
+- kotlin = "1.9.0"
+- coreKtx = "1.15.0"
+- junit = "4.13.2"
+-Index: gradle/wrapper/gradle-wrapper.properties
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>#Tue Nov 19 20:07:17 CET 2024\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-bin.zip\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>ISO-8859-1
+-===================================================================
+-diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+---- a/gradle/wrapper/gradle-wrapper.properties	(revision eb920c67cccbfaf99660eb80902396152e173488)
+-+++ b/gradle/wrapper/gradle-wrapper.properties	(date 1732203684298)
+-@@ -1,6 +1,6 @@
+- #Tue Nov 19 20:07:17 CET 2024
+- distributionBase=GRADLE_USER_HOME
+- distributionPath=wrapper/dists
+--distributionUrl=https\://services.gradle.org/distributions/gradle-8.7-bin.zip
+-+distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
+- zipStoreBase=GRADLE_USER_HOME
+- zipStorePath=wrapper/dists
+-Index: app/src/main/res/values/preloaded_fonts.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/values/preloaded_fonts.xml b/app/src/main/res/values/preloaded_fonts.xml
+-new file mode 100644
+---- /dev/null	(date 1732203684295)
+-+++ b/app/src/main/res/values/preloaded_fonts.xml	(date 1732203684295)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<resources>
+-+    <array name="preloaded_fonts" translatable="false">
+-+        <item>@font/roboto_bold</item>
+-+    </array>
+-+</resources>
+-Index: .idea/gradle.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+---- a/.idea/gradle.xml	(revision eb920c67cccbfaf99660eb80902396152e173488)
+-+++ b/.idea/gradle.xml	(date 1732203693773)
+-@@ -1,8 +1,10 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="GradleMigrationSettings" migrationVersion="1" />
+-   <component name="GradleSettings">
+-     <option name="linkedExternalProjectsSettings">
+-       <GradleProjectSettings>
+-+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+-         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+-         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+-         <option name="modules">
+-Index: app/src/main/res/values/font_certs.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/values/font_certs.xml b/app/src/main/res/values/font_certs.xml
+-new file mode 100644
+---- /dev/null	(date 1732203684294)
+-+++ b/app/src/main/res/values/font_certs.xml	(date 1732203684294)
+-@@ -0,0 +1,17 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<resources>
+-+    <array name="com_google_android_gms_fonts_certs">
+-+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+-+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+-+    </array>
+-+    <string-array name="com_google_android_gms_fonts_certs_dev">
+-+        <item>
+-+            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
+-+        </item>
+-+    </string-array>
+-+    <string-array name="com_google_android_gms_fonts_certs_prod">
+-+        <item>
+-+            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
+-+        </item>
+-+    </string-array>
+-+</resources>
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision eb920c67cccbfaf99660eb80902396152e173488)
+-+++ b/.idea/misc.xml	(date 1732203684292)
+-@@ -1,7 +1,7 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-   <component name="ExternalStorageConfigurationManager" enabled="true" />
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/build/classes" />
+-   </component>
+-   <component name="ProjectType">
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41__Changes_.xml	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
++++ /dev/null	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]" date="1732203730120" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2024_16_41_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 21/11/2024 16:41 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Base.Theme.Flicker\" parent=\"Theme.Material3.DayNight.NoActionBar\">\r\n        <!-- Customize your light theme here. -->\r\n        <!-- <item name=\"colorPrimary\">@color/my_light_primary</item> -->\r\n    </style>\r\n\r\n    <style name=\"Theme.Flicker\" parent=\"Base.Theme.Flicker\" />\r\n    <style name=\"Theme.Flicker.NoActionBar\">\r\n        <item name=\"windowActionBar\">false</item>\r\n        <item name=\"windowNoTitle\">true</item>\r\n    </style>\r\n    <style name=\"Theme.Flicker.AppBarOverlay\" parent=\"ThemeOverlay.AppCompat.Dark.ActionBar\" />\r\n    <style name=\"Theme.Flicker.PopupOverlay\" parent=\"ThemeOverlay.AppCompat.Light\" />\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision c517b3834e88dbf6afc1b7c7278b1ee9370040f8)
++++ b/app/src/main/res/values/themes.xml	(date 1732810608690)
+@@ -9,6 +9,56 @@
+     <style name="Theme.Flicker.NoActionBar">
+         <item name="windowActionBar">false</item>
+         <item name="windowNoTitle">true</item>
++        <item name="colorPrimary">@color/md_theme_primary</item>
++        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
++        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
++        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
++        <item name="colorSecondary">@color/md_theme_secondary</item>
++        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
++        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
++        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
++        <item name="colorTertiary">@color/md_theme_tertiary</item>
++        <item name="colorOnTertiary">@color/md_theme_onTertiary</item>
++        <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer</item>
++        <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer</item>
++        <item name="colorError">@color/md_theme_error</item>
++        <item name="colorOnError">@color/md_theme_onError</item>
++        <item name="colorErrorContainer">@color/md_theme_errorContainer</item>
++        <item name="colorOnErrorContainer">@color/md_theme_onErrorContainer</item>
++        <item name="android:colorBackground">@color/md_theme_background</item>
++        <item name="colorOnBackground">@color/md_theme_onBackground</item>
++        <item name="colorSurface">@color/md_theme_surface</item>
++        <item name="colorOnSurface">@color/md_theme_onSurface</item>
++        <item name="colorSurfaceVariant">@color/md_theme_surfaceVariant</item>
++        <item name="colorOnSurfaceVariant">@color/md_theme_onSurfaceVariant</item>
++        <item name="colorOutline">@color/md_theme_outline</item>
++        <item name="colorOutlineVariant">@color/md_theme_outlineVariant</item>
++        <item name="colorSurfaceInverse">@color/md_theme_inverseSurface</item>
++        <item name="colorOnSurfaceInverse">@color/md_theme_inverseOnSurface</item>
++        <item name="colorPrimaryInverse">@color/md_theme_inversePrimary</item>
++        <item name="colorPrimaryFixed">@color/md_theme_primaryFixed</item>
++        <item name="colorOnPrimaryFixed">@color/md_theme_onPrimaryFixed</item>
++        <item name="colorPrimaryFixedDim">@color/md_theme_primaryFixedDim</item>
++        <item name="colorOnPrimaryFixedVariant">@color/md_theme_onPrimaryFixedVariant</item>
++        <item name="colorSecondaryFixed">@color/md_theme_secondaryFixed</item>
++        <item name="colorOnSecondaryFixed">@color/md_theme_onSecondaryFixed</item>
++        <item name="colorSecondaryFixedDim">@color/md_theme_secondaryFixedDim</item>
++        <item name="colorOnSecondaryFixedVariant">@color/md_theme_onSecondaryFixedVariant</item>
++        <item name="colorTertiaryFixed">@color/md_theme_tertiaryFixed</item>
++        <item name="colorOnTertiaryFixed">@color/md_theme_onTertiaryFixed</item>
++        <item name="colorTertiaryFixedDim">@color/md_theme_tertiaryFixedDim</item>
++        <item name="colorOnTertiaryFixedVariant">@color/md_theme_onTertiaryFixedVariant</item>
++        <item name="colorSurfaceDim">@color/md_theme_surfaceDim</item>
++        <item name="colorSurfaceBright">@color/md_theme_surfaceBright</item>
++        <item name="colorSurfaceContainerLowest">@color/md_theme_surfaceContainerLowest</item>
++        <item name="colorSurfaceContainerLow">@color/md_theme_surfaceContainerLow</item>
++        <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
++        <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
++        <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
++        <item name="colorAccent">@color/colorAccent</item>
++        <item name="colorOnAccent">@color/colorOnAccent</item>
++        <item name="colorAccentContainer">@color/colorAccentContainer</item>
++        <item name="colorOnAccentContainer">@color/colorOnAccentContainer</item>
+     </style>
+     <style name="Theme.Flicker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+     <style name="Theme.Flicker.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

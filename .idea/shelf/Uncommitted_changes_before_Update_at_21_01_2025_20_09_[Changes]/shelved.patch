@@ -1,0 +1,150 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Flicker\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".Detail\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Desats\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Profile\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Movies\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Register\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Login\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 3506fe074c0ce9c585e64f3ce97d4c1e2fe1071a)
++++ b/app/src/main/AndroidManifest.xml	(date 1736438568851)
+@@ -12,6 +12,13 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Flicker"
+         tools:targetApi="31">
++        <activity android:name=".SplashActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
+         <activity
+             android:name=".Detail"
+             android:exported="false" />
+Index: app/src/main/res/layout/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash.xml b/app/src/main/res/layout/activity_splash.xml
+new file mode 100644
+--- /dev/null	(date 1736438568856)
++++ b/app/src/main/res/layout/activity_splash.xml	(date 1736438568856)
+@@ -0,0 +1,13 @@
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/md_theme_error_mediumContrast"
++    android:gravity="center">
++
++    <ImageView
++        android:id="@+id/logo"
++        android:layout_width="200dp"
++        android:layout_height="200dp"
++        android:src="@drawable/ic_logo"
++        android:contentDescription="@string/app_name" />
++</RelativeLayout>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"17\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 3506fe074c0ce9c585e64f3ce97d4c1e2fe1071a)
++++ b/.idea/compiler.xml	(date 1734629530295)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="17" />
++    <bytecodeTargetLevel target="21" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/flicker/SplashActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flicker/SplashActivity.kt b/app/src/main/java/com/example/flicker/SplashActivity.kt
+new file mode 100644
+--- /dev/null	(date 1736439106723)
++++ b/app/src/main/java/com/example/flicker/SplashActivity.kt	(date 1736439106723)
+@@ -0,0 +1,30 @@
++import android.content.Intent
++import android.os.Bundle
++import android.view.animation.Animation
++import android.view.animation.AnimationUtils
++import android.widget.ImageView
++import androidx.appcompat.app.AppCompatActivity
++import com.example.flicker.MainActivity
++import com.example.flicker.R
++
++class SplashActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_splash)
++        val logoImageView = findViewById<ImageView>(R.id.logo)
++
++        // Cargar la animación
++        val pumpBounceAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
++        logoImageView.startAnimation(pumpBounceAnimation)
++
++        // Navegar a la siguiente pantalla después de la animación
++        pumpBounceAnimation.setAnimationListener(object : Animation.AnimationListener {
++            override fun onAnimationStart(animation: android.view.animation.Animation?) {}
++            override fun onAnimationEnd(animation: android.view.animation.Animation?) {
++                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
++                finish()
++            }
++            override fun onAnimationRepeat(animation: android.view.animation.Animation?) {}
++        })
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/anim/fade_in.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/fade_in.xml b/app/src/main/res/anim/fade_in.xml
+new file mode 100644
+--- /dev/null	(date 1736438947567)
++++ b/app/src/main/res/anim/fade_in.xml	(date 1736438947567)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android"
++    android:interpolator="@android:interpolator/bounce">
++    <scale
++        android:duration="2000"
++        android:fromXScale="0.0"
++        android:fromYScale="0.0"
++        android:toXScale="1.0"
++        android:toYScale="1.0"
++        android:pivotX="50%"
++        android:pivotY="50%"
++        />
++</set>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3506fe074c0ce9c585e64f3ce97d4c1e2fe1071a)
++++ b/.idea/misc.xml	(date 1734629530315)
+@@ -1,6 +1,6 @@
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
