@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Profile">
+    android:layout_height="match_parent">
 
     <!-- Contenido principal -->
     <LinearLayout
@@ -12,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_above="@id/footer"
         android:layout_marginBottom="16dp">
 
         <!-- Imagen del perfil (provisional) -->
@@ -98,13 +96,4 @@
                 android:background="@color/md_theme_onPrimary" />
         </LinearLayout>
     </LinearLayout>
-
-    <!-- Footer -->
-    <fragment
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.flicker.Footer"
-        tools:layout="@layout/fragment_footer"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>

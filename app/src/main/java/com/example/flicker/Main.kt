@@ -1,23 +1,16 @@
 package com.example.flicker
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.flicker.movies.MovieAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Movies : AppCompatActivity() {
+class Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_movies)
+        setContentView(R.layout.activity_main)
 
         // Inicialmente carga el fragmento principal
         if (savedInstanceState == null) {
