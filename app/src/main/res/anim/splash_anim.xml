@@ -15,6 +15,7 @@
     <!-- Pequeña rotación -->
     <rotate
         android:duration="800"
+        android:startOffset="200"
         android:fromDegrees="0"
         android:toDegrees="15"
         android:pivotX="50%"
@@ -23,6 +24,7 @@
     <!-- Pequeño rebote -->
     <translate
         android:duration="600"
+        android:startOffset="400"
         android:fromYDelta="-20%"
         android:toYDelta="0%"
         android:interpolator="@android:anim/overshoot_interpolator"/>
