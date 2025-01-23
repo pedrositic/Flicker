@@ -1,5 +1,6 @@
 package com.example.flicker
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 class Profile : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
+    @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,9 +21,6 @@ class Profile : AppCompatActivity() {
         // Obtener preferencias y aplicar el tema antes de crear la actividad
         sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
         val isDarkMode = sharedPreferences.getBoolean("isDarkMode", false)
-        AppCompatDelegate.setDefaultNightMode(
-            if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
-        )
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
