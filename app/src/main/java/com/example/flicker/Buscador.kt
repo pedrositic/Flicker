@@ -34,7 +34,7 @@ class Buscador : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_header, container, false)
+        return inflater.inflate(R.layout.fragment_buscador, container, false)
     }
 
     companion object {

@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
 
         val iniciar: TextView = findViewById(R.id.login_button)
         iniciar.setOnClickListener {
-            val intent = Intent(this, Movies::class.java)
+            val intent = Intent(this, Main::class.java)
             startActivity(intent)
         }
     }

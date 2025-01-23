@@ -30,7 +30,7 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".Movies"
+            android:name=".Main"
             android:exported="false" />
         <activity
             android:name=".Register"
