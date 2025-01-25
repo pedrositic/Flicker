@@ -19,10 +19,13 @@ class SplashActivity : AppCompatActivity() {
         val animacionLogo = AnimationUtils.loadAnimation(this, R.anim.splash_anim)
         logo.startAnimation(animacionLogo)
 
+        // Mantener el tamaño final tras la animación
+        animacionLogo.fillAfter = true
+
         // Pasar a Login después de la animación
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, Login::class.java))
             finish()
-        }, 1700) // Tiempo total de la animación (1.7s)
+        }, 2200) // Tiempo total ajustado a la animación
     }
 }
