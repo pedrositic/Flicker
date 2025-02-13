@@ -6,6 +6,7 @@ data class Movie(
     val year: Int,
     val genre: String,
     val description: String,
-    val poster: String
+    val poster: String,
+    val saved: Boolean
 )
 
