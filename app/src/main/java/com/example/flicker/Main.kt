@@ -4,12 +4,23 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.example.flicker.data.RetrofitServiceFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.launch
 
 class Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        //Prova Retrofit
+        /*val service = RetrofitServiceFactory.makeRetrofitService()
+        lifecycleScope.launch {
+            service.listMovies();
+        }*/
+
         setContentView(R.layout.activity_main)
 
         // Inicialmente carga el fragmento principal
