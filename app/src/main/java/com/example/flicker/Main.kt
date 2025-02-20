@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.flicker.data.RetrofitServiceFactory
+import com.example.flicker.data.model.MovieItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
@@ -16,10 +17,10 @@ class Main : AppCompatActivity() {
         enableEdgeToEdge()
 
         //Prova Retrofit
-        /*val service = RetrofitServiceFactory.makeRetrofitService()
+        val service = RetrofitServiceFactory.makeRetrofitService()
         lifecycleScope.launch {
-            service.listMovies();
-        }*/
+            val movies = service.listMovies();
+        }
 
         setContentView(R.layout.activity_main)
 
