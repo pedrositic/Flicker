@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flicker.data.RetrofitServiceFactory
 import com.example.flicker.movies.MovieAdapter
 import kotlinx.coroutines.launch
+import com.example.flicker.data.model.MovieItem
 
 class fragment_movies_list : Fragment() {
     private lateinit var movieAdapter: MovieAdapter
@@ -21,29 +22,36 @@ class fragment_movies_list : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_list, container, false)
         val rv = view.findViewById<RecyclerView>(R.id.recyclerView)
         rv.layoutManager = LinearLayoutManager(context)
 
-        // Inicializa el adaptador con una lista vacía
-        movieAdapter = MovieAdapter(emptyList())
+        // Configurar el adaptador con el manejador de clics
+        movieAdapter = MovieAdapter(emptyList()) { movie ->
+            openDetailFragment(movie)
+        }
         rv.adapter = movieAdapter
 
         lifecycleScope.launch {
             try {
-                // Obtiene la lista de películas desde la API
                 val service = RetrofitServiceFactory.makeRetrofitService()
                 val movies = service.listMovies()
 
-                // Actualiza el adaptador con los datos obtenidos
-                movieAdapter.updateMovies(movies) // Asume que `movies` tiene una propiedad `movies`
+                movieAdapter.updateMovies(movies)
             } catch (e: Exception) {
-                // Maneja errores (por ejemplo, muestra un mensaje al usuario)
                 Log.e("FragmentMoviesList", "Error fetching movies", e)
                 Toast.makeText(context, "Failed to load movies", Toast.LENGTH_SHORT).show()
             }
         }
         return view
+    }
+
+    private fun openDetailFragment(movie: MovieItem) {
+        val fragment = Detail.newInstance(movie)
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

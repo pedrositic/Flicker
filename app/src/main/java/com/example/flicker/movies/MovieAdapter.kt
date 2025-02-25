@@ -10,7 +10,11 @@ import com.example.flicker.R
 import com.bumptech.glide.Glide
 import com.example.flicker.data.model.MovieItem
 
-class MovieAdapter(var llistaMovies: List<MovieItem>) : RecyclerView.Adapter<MovieAdapterHolder>() {
+class MovieAdapter(
+    var llistaMovies: List<MovieItem>,
+    private val onItemClick: (MovieItem) -> Unit // Función lambda para manejar clics
+) : RecyclerView.Adapter<MovieAdapterHolder>() {
+
     fun updateMovies(newMovies: List<MovieItem>) {
         llistaMovies = newMovies // Actualiza la lista de películas
         notifyDataSetChanged()   // Notifica al adaptador que los datos han cambiado
@@ -29,6 +33,11 @@ class MovieAdapter(var llistaMovies: List<MovieItem>) : RecyclerView.Adapter<Mov
     override fun onBindViewHolder(holder: MovieAdapterHolder, position: Int) {
         val movie = llistaMovies[position]
         holder.Renderitzar(movie)
+
+        // Manejo de clics: Llama a la función pasando la película seleccionada
+        holder.itemView.setOnClickListener {
+            onItemClick(movie)
+        }
     }
 }
 
