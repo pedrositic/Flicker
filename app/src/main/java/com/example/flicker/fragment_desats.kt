@@ -10,28 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flicker.movies.MovieAdapter
 import com.example.flicker.movies.savedMovies
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [fragment_desats.newInstance] factory method to
- * create an instance of this fragment.
- */
 class fragment_desats : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,27 +20,7 @@ class fragment_desats : Fragment() {
         val view = inflater.inflate(R.layout.activity_desats, container, false)
         val rv = view.findViewById<RecyclerView>(R.id.recyclerViewMovies)
         rv.layoutManager = LinearLayoutManager(context)
-        rv.adapter = MovieAdapter(savedMovies)
+        rv.adapter = MovieAdapter(savedMovies) { }
         return view
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_desats.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_desats().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

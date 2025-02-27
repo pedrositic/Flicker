@@ -1,6 +1,8 @@
 package com.example.flicker.data.model
 
-data class MovieItem(
+import java.io.Serializable
+
+data class MovieItem (
     val description: String,
     val genre: String,
     val id: String,
@@ -8,4 +10,4 @@ data class MovieItem(
     val saved: Int,
     val title: String,
     val year: Int
-)
+) : Serializable
