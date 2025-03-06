@@ -27,9 +27,18 @@ class fragment_movies_list : Fragment() {
         rv.layoutManager = LinearLayoutManager(context)
 
         // Configurar el adaptador con el manejador de clics
-        movieAdapter = MovieAdapter(emptyList()) { movie ->
-            openDetailFragment(movie)
-        }
+        movieAdapter = MovieAdapter(emptyList(),
+            { movie ->
+                // Manejador para el clic en el item completo
+                Log.d("FragmentMoviesList", "Clic en la película: ${movie.title} Con Rating: ${movie.imdbRating}")
+                openDetailFragment(movie)
+            },
+            { movie ->
+                // Manejador para el clic en el botón "save"
+                Log.d("FragmentMoviesList", "Botón 'save' clicado para la película: ${movie.title}")
+                toggleSaveMovie(movie)
+            }
+        )
         rv.adapter = movieAdapter
 
         lifecycleScope.launch {
@@ -53,5 +62,29 @@ class fragment_movies_list : Fragment() {
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun toggleSaveMovie(movie: MovieItem) {
+        // Lógica para guardar/desmarcar la película como favorita
+        lifecycleScope.launch {
+            try {
+                val service = RetrofitServiceFactory.makeRetrofitService()
+                if (movie.saved == 1) {
+                    // Si ya está guardada, eliminarla de favoritos
+                    service.removeFavourite(movie.id)
+                    movie.saved = 0
+                } else {
+                    // Si no está guardada, añadirla a favoritos
+                    service.addFavourite(movie.id)
+                    movie.saved = 1
+                }
+
+                // Actualizar la vista del RecyclerView
+                movieAdapter.notifyDataSetChanged()
+            } catch (e: Exception) {
+                Log.e("FragmentMoviesList", "Error toggling save status", e)
+                Toast.makeText(context, "Failed to update save status", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

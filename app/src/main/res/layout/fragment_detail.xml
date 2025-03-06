@@ -111,24 +111,6 @@
                     android:backgroundTint="@color/md_theme_primary"
                     android:textColor="@color/md_theme_onPrimary"
                     android:text="Aventura"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_button"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/md_theme_primary"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:text="Ciencia ficció"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_button"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/md_theme_primary"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:text="Drama"/>
 
             </LinearLayout>
 

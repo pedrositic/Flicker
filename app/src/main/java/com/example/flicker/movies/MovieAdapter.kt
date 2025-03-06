@@ -12,7 +12,8 @@ import com.example.flicker.data.model.MovieItem
 
 class MovieAdapter(
     var llistaMovies: List<MovieItem>,
-    private val onItemClick: (MovieItem) -> Unit // Función lambda para manejar clics
+    private val onItemClick: (MovieItem) -> Unit, // Función lambda para manejar clics
+    private val onSaveClick: (MovieItem) -> Unit // Función lambda para manejar clics en el botón de guardado
 ) : RecyclerView.Adapter<MovieAdapterHolder>() {
 
     fun updateMovies(newMovies: List<MovieItem>) {
@@ -37,6 +38,11 @@ class MovieAdapter(
         // Manejo de clics: Llama a la función pasando la película seleccionada
         holder.itemView.setOnClickListener {
             onItemClick(movie)
+        }
+
+        // Manejo de clics en el botón "save"
+        holder.saved.setOnClickListener {
+            onSaveClick(movie)
         }
     }
 }

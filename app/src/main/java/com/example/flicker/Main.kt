@@ -16,7 +16,6 @@ class Main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        //Prova Retrofit
         val service = RetrofitServiceFactory.makeRetrofitService()
         lifecycleScope.launch {
             val movies = service.listMovies();

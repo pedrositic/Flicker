@@ -1,47 +1,51 @@
 package com.example.flicker.data
 
 import com.example.flicker.data.model.MovieItem
-import com.example.flicker.data.model.Movies
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 import okhttp3.OkHttpClient
+import retrofit2.http.DELETE
+import retrofit2.http.PUT
 import java.security.cert.CertificateException
 import javax.net.ssl.*
 
 interface RetrofitService {
 
+    // Endpoint para obtener todas las películas
     @GET("movies/")
-    suspend fun listMovies(
-    ): List<MovieItem>
+    suspend fun listMovies(): List<MovieItem>
 
-    @POST("movies/")
-    suspend fun addMovie(@Body movieItem: MovieItem)
-
-    @POST("movies/save/{movie_id}")
-    suspend fun saveMovie(
-        @Path("movie_id") movieId: String
-    )
-
-    @POST("movies/unsave/{movie_id}")
-    suspend fun unsaveMovie(
-        @Path("movie_id") movieId: String
-    )
-
+    // Endpoint para obtener detalles de una película por ID
     @GET("movies/{movie_id}")
-    suspend fun readMovie(
-        @Path("movie_id") movieId: String
-    ): MovieItem
+    suspend fun readMovie(@Path("movie_id") movieId: String): MovieItem
 
+    // Endpoint para buscar películas por título parcial
     @GET("movies/by_title/")
-    suspend fun readMovieByTitle(
-        @Query("title") title: String
-    ): MovieItem
+    suspend fun readMovieByTitle(@Query("title") title: String): MovieItem
+
+    // Endpoint para marcar/desmarcar "like" o "dislike"
+    @PUT("movies/{movie_id}/toggle_like")
+    suspend fun toggleLike(
+        @Path("movie_id") movieId: String,
+        @Query("like") like: Boolean
+    ): Map<String, String>
+
+    // Endpoint para añadir una película a favoritos
+    @POST("favourites/add")
+    suspend fun addFavourite(@Query("movie_id") movieId: String): Map<String, String>
+
+    // Endpoint para eliminar una película de favoritos
+    @DELETE("favourites/remove/{movie_id}")
+    suspend fun removeFavourite(@Path("movie_id") movieId: String): Map<String, String>
+
+    // Endpoint para obtener todas las películas favoritas
+    @GET("favourites")
+    suspend fun getFavourites(): List<MovieItem>
 }
 
 object RetrofitServiceFactory {
