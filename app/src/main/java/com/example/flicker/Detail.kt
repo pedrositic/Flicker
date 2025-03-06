@@ -25,7 +25,7 @@ class Detail : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_detail, container, false)
+        val view = inflater.inflate(R.layout.movie_detail, container, false)
 
         val titleTextView = view.findViewById<TextView>(R.id.movieTitle)
         val yearTextView = view.findViewById<TextView>(R.id.movieYear)

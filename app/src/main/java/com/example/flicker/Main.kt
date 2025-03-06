@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.flicker.data.RetrofitServiceFactory
-import com.example.flicker.data.model.MovieItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
@@ -25,22 +24,22 @@ class Main : AppCompatActivity() {
 
         // Inicialmente carga el fragmento principal
         if (savedInstanceState == null) {
-            loadFragment(fragment_movies_list())
+            loadFragment(MoviesList())
         }
 
         val menu = findViewById<BottomNavigationView>(R.id.menu_bottom)
         menu.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_home -> {
-                    loadFragment(fragment_movies_list())
+                    loadFragment(MoviesList())
                 }
 
                 R.id.bottom_save -> {
-                   loadFragment(fragment_desats())
+                   loadFragment(Saved())
                 }
 
                 R.id.bottom_profile -> {
-                    loadFragment(fragment_profile())
+                    loadFragment(Profile())
                 }
             }
             true
