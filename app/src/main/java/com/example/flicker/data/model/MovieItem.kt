@@ -1,5 +1,6 @@
 package com.example.flicker.data.model
 
+import android.os.Parcelable
 import java.io.Serializable
 
 data class MovieItem(

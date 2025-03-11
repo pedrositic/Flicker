@@ -26,7 +26,7 @@ interface RetrofitService {
 
     // Endpoint para buscar películas por título parcial
     @GET("movies/by_title/")
-    suspend fun readMovieByTitle(@Query("title") title: String): MovieItem
+    suspend fun readMovieByTitle(@Query("title") title: String): List<MovieItem>
 
     // Endpoint para marcar/desmarcar "like" o "dislike"
     @PUT("movies/{movie_id}/toggle_like")

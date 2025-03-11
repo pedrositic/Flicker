@@ -9,17 +9,6 @@
     android:layout_margin="16dp"
     android:gravity="center_horizontal">
 
-    <!-- Botón de buscar -->
-    <ImageView
-        android:id="@+id/ivSearch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/ic_search"
-        android:contentDescription="Buscar"
-        android:padding="10dp"
-        app:tint="@color/md_theme_primary" />
-
     <!-- Barra de búsqueda -->
     <EditText
         android:id="@+id/etSearch"
@@ -31,4 +20,15 @@
         android:drawablePadding="8dp"
         android:padding="12dp"
         android:inputType="text" />
+
+    <!-- Botón de buscar -->
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_search"
+        android:contentDescription="Buscar"
+        android:padding="10dp"
+        app:tint="@color/md_theme_primary" />
 </LinearLayout>
