@@ -1,18 +1,13 @@
 package com.example.flicker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import com.example.flicker.data.RetrofitServiceFactory
 import com.example.flicker.data.model.MovieItem
 import com.example.flicker.movies.BaseMoviesFragment
 
 class Searcher : BaseMoviesFragment() {
 
     private var searchedMovies: List<MovieItem> = emptyList()
-
     override fun getLayoutResId(): Int = R.layout.fragment_searcher
     override fun getRecyclerViewId(): Int = R.id.recyclerViewMovies
 
@@ -22,11 +17,9 @@ class Searcher : BaseMoviesFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         arguments?.let {
             searchedMovies = it.getSerializable("MOVIES_LIST") as? List<MovieItem> ?: emptyList()
         }
-
         loadMovies()
     }
 }

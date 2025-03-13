@@ -35,7 +35,7 @@ abstract class BaseMoviesFragment : Fragment() {
         movieAdapter = MovieAdapter(
             emptyList(),
             { movie -> onMovieItemClick(movie) },
-            { movie -> toggleSaveMovie(movie) }
+            { movie, position -> toggleSaveMovie(movie, position) }
         )
         recyclerView.adapter = movieAdapter
     }
@@ -57,7 +57,7 @@ abstract class BaseMoviesFragment : Fragment() {
             .commit()
     }
 
-    private fun toggleSaveMovie(movie: MovieItem) {
+    private fun toggleSaveMovie(movie: MovieItem, position: Int) {
         lifecycleScope.launch {
             try {
                 val service = RetrofitServiceFactory.makeRetrofitService()
@@ -68,7 +68,7 @@ abstract class BaseMoviesFragment : Fragment() {
                     service.addFavourite(movie.id)
                     movie.saved = 1
                 }
-                movieAdapter.notifyDataSetChanged()
+                movieAdapter.notifyItemChanged(position)
             } catch (e: Exception) {
                 Log.e("BaseMoviesFragment", "Error toggling save status", e)
                 Toast.makeText(context, "Failed to update save status", Toast.LENGTH_SHORT).show()

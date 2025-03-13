@@ -128,7 +128,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/moviePoster"
         android:layout_width="match_parent"
         android:layout_height="250dp"
