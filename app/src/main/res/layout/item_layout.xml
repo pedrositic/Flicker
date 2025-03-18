@@ -101,7 +101,7 @@
                         android:background="@android:color/transparent"
                         android:contentDescription="Me gusta"
                         android:paddingTop="15dp"
-                        android:src="@drawable/baseline_thumb_border"
+                        android:src="@drawable/baseline_like_border"
                         app:tint="@color/md_theme_primary" />
                 </LinearLayout>
 
