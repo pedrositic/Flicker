@@ -1,6 +1,7 @@
 package com.example.flicker.movies
 
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.ImageView
 import com.example.flicker.R
 import com.example.flicker.data.RetrofitServiceFactory
@@ -23,16 +24,12 @@ object MovieUtils {
             try {
                 val service = RetrofitServiceFactory.makeRetrofitService()
                 if (movie.saved == 1) {
-                    // Si está guardada, eliminarla de favoritos
                     service.removeFavourite(movie.id)
                     movie.saved = 0
                 } else {
-                    // Si no está guardada, añadirla a favoritos
                     service.addFavourite(movie.id)
                     movie.saved = 1
                 }
-
-                // Actualizar el ícono del botón "save"
                 updateSaveButtonIcon(button, movie.saved)
             } catch (e: Exception) {
                 Log.e("MovieUtils", "Error toggling save status", e)
@@ -42,13 +39,49 @@ object MovieUtils {
     }
 
     /**
-     * Actualiza el ícono del botón "save" según el estado de `saved`.
+     * Actualiza el ícono del botón "save".
      */
     fun updateSaveButtonIcon(button: ImageView, saved: Int) {
-        if (saved == 1) {
-            button.setImageResource(R.drawable.baseline_bookmark) // Película guardada
-        } else {
-            button.setImageResource(R.drawable.baseline_bookmark_border) // Película no guardada
+        button.setImageResource(
+            if (saved == 1) R.drawable.baseline_bookmark
+            else R.drawable.baseline_bookmark_border
+        )
+    }
+
+    /**
+     * Alterna el estado de "like" de una película.
+     */
+    fun toggleLikeMovie(
+        movie: MovieItem,
+        button: ImageButton,
+        scope: CoroutineScope,
+        onError: (Exception) -> Unit = {}
+    ) {
+        scope.launch {
+            try {
+                val service = RetrofitServiceFactory.makeRetrofitService()
+
+                // Alternar el estado de "liked"
+                val newLiked = if (movie.liked == 1) 0 else 1
+                service.toggleLike(movie.id) // Llamada al backend para alternar el estado
+                movie.liked = newLiked
+
+                // Actualizar el ícono del botón
+                updateLikeButtonIcon(button, newLiked)
+            } catch (e: Exception) {
+                Log.e("MovieUtils", "Error toggling like status", e)
+                onError(e)
+            }
         }
+    }
+
+    /**
+     * Actualiza el ícono del botón "like".
+     */
+    fun updateLikeButtonIcon(button: ImageButton, liked: Int) {
+        button.setImageResource(
+            if (liked == 1) R.drawable.baseline_like
+            else R.drawable.baseline_like_border
+        )
     }
 }

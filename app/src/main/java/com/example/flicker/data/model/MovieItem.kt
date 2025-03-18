@@ -12,5 +12,5 @@ data class MovieItem(
     val title: String,
     val year: Int,
     val imdbRating: String,  // Rating de IMDb
-    val liked: Boolean?      // Estado de "like" (true = like, false = dislike, null = no valorado)
+    var liked: Int      // Estado de "like" (true = like, false = dislike, null = no valorado)
 ) : Serializable

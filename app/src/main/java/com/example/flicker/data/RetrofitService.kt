@@ -31,8 +31,7 @@ interface RetrofitService {
     // Endpoint para marcar/desmarcar "like" o "dislike"
     @PUT("movies/{movie_id}/toggle_like")
     suspend fun toggleLike(
-        @Path("movie_id") movieId: String,
-        @Query("like") like: Boolean
+        @Path("movie_id") movieId: String
     ): Map<String, String>
 
     // Endpoint para añadir una película a favoritos

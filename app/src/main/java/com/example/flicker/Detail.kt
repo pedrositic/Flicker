@@ -1,16 +1,15 @@
 package com.example.flicker
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.flicker.data.RetrofitServiceFactory
 import com.example.flicker.data.model.MovieItem
 import com.example.flicker.movies.MovieUtils
 import kotlinx.coroutines.MainScope
@@ -36,31 +35,23 @@ class Detail : Fragment() {
         val yearTextView = view.findViewById<TextView>(R.id.movieYear)
         val genreTextView = view.findViewById<TextView>(R.id.movieGenre)
         val descriptionTextView = view.findViewById<TextView>(R.id.movieDescription)
-        val posterImageView = view.findViewById<ImageView>(R.id.moviePoster)
+        val posterImageView = view.findViewById<android.widget.ImageView>(R.id.moviePoster)
         val ratingTextView = view.findViewById<TextView>(R.id.rating)
         val saveButton = view.findViewById<ImageButton>(R.id.buttonSave)
+        val likeButton = view.findViewById<ImageButton>(R.id.buttonLike)
 
         movie?.let { movieItem ->
             titleTextView.text = movieItem.title
             yearTextView.text = movieItem.year.toString()
             genreTextView.text = movieItem.genre
             descriptionTextView.text = movieItem.description
-
-            // Log del imdbRating para depuración
-            Log.d("DetailFragment", "IMDb Rating: ${movieItem.imdbRating}")
-
-            // Manejar valores nulos para el rating
-            ratingTextView.text = if (movieItem.imdbRating != null) {
-                movieItem.imdbRating
-            } else {
-                "N/A" // Valor predeterminado si el rating es null
-            }
+            ratingTextView.text = movieItem.imdbRating ?: "N/A"
 
             Glide.with(requireContext())
                 .load(movieItem.poster)
                 .into(posterImageView)
 
-            // Actualizar el ícono del botón "save" según el estado de `saved`
+            // Actualizar el ícono del botón "save"
             MovieUtils.updateSaveButtonIcon(saveButton, movieItem.saved)
 
             // Manejar el clic en el botón "save"
@@ -71,6 +62,21 @@ class Detail : Fragment() {
                     mainScope,
                     onError = { e ->
                         Toast.makeText(context, "Failed to update save status", Toast.LENGTH_SHORT).show()
+                    }
+                )
+            }
+
+            // Actualizar el ícono del botón "like"
+            MovieUtils.updateLikeButtonIcon(likeButton, movieItem.liked)
+
+            // Manejar el clic en el botón "like"
+            likeButton.setOnClickListener {
+                MovieUtils.toggleLikeMovie(
+                    movieItem,
+                    likeButton,
+                    mainScope,
+                    onError = { e ->
+                        Toast.makeText(context, "Failed to update like status", Toast.LENGTH_SHORT).show()
                     }
                 )
             }
