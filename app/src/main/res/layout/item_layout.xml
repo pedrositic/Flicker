@@ -69,7 +69,6 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="2014"
                             android:textSize="18sp" />
-
                     </LinearLayout>
 
                     <TextView
@@ -80,14 +79,31 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/buttonSave"
+                <!-- Contenedor vertical para los botones -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="Dessar pel·licula"
-                    android:src="@drawable/baseline_bookmark_border"
-                    app:tint="@color/md_theme_primary" />
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/buttonSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="Guardar película"
+                        android:src="@drawable/baseline_bookmark_border"
+                        app:tint="@color/md_theme_primary" />
+
+                    <ImageButton
+                        android:id="@+id/buttonLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="Me gusta"
+                        android:paddingTop="15dp"
+                        android:src="@drawable/baseline_thumb_border"
+                        app:tint="@color/md_theme_primary" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -99,8 +115,6 @@
                 android:src="@drawable/interstellar" />
         </LinearLayout>
 
-
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
