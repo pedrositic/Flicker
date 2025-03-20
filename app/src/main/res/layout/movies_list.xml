@@ -27,7 +27,19 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/md_theme_surfaceContainer"
-                android:text="Popular"
+                android:text="Totes"
+                android:tag="All"
+                android:textColor="@color/md_theme_primary"
+                app:cornerRadius="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/md_theme_surfaceContainer"
+                android:text="Animació"
+                android:tag="Animation"
                 android:textColor="@color/md_theme_primary"
                 app:cornerRadius="5dp" />
 
@@ -38,16 +50,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/md_theme_surfaceContainer"
                 android:text="Comedia"
-                android:textColor="@color/md_theme_primary"
-                app:cornerRadius="5dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/md_theme_surfaceContainer"
-                android:text="Terror"
+                android:tag="Comedy"
                 android:textColor="@color/md_theme_primary"
                 app:cornerRadius="5dp" />
 
@@ -58,6 +61,18 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/md_theme_surfaceContainer"
                 android:text="Acció"
+                android:tag="Action"
+                android:textColor="@color/md_theme_primary"
+                app:cornerRadius="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/md_theme_surfaceContainer"
+                android:text="Aventura"
+                android:tag="Adventure"
                 android:textColor="@color/md_theme_primary"
                 app:cornerRadius="5dp" />
         </LinearLayout>

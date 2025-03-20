@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 abstract class BaseMoviesFragment : Fragment() {
 
     protected lateinit var movieAdapter: MovieAdapter
+    protected var allMovies: List<MovieItem> = emptyList() // Lista completa de películas
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,15 +112,34 @@ abstract class BaseMoviesFragment : Fragment() {
     /**
      * Carga las películas desde la fuente de datos.
      */
-    protected fun loadMovies() {
+    protected open fun loadMovies() {
         lifecycleScope.launch {
             try {
-                val movies = fetchMovies()
-                movieAdapter.updateMovies(movies)
+                allMovies = fetchMovies() // Guardar la lista completa de películas
+                movieAdapter.updateMovies(allMovies) // Mostrar todas las películas inicialmente
             } catch (e: Exception) {
                 Log.e("BaseMoviesFragment", "Error fetching movies", e)
                 Toast.makeText(context, "Failed to load movies", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    /**
+     * Filtra las películas por categoría.
+     * @param category La categoría seleccionada. Si es "Popular", muestra todas las películas.
+     */
+    protected fun filterMoviesByCategory(category: String) {
+        val normalizedCategory = category.trim().lowercase() // Normalizar la categoría
+        val filteredMovies = if (normalizedCategory == "popular") {
+            allMovies // Mostrar todas las películas si se selecciona "Popular"
+        } else {
+            allMovies.filter { movie ->
+                movie.genre.split(", ") // Dividir los géneros en una lista
+                    .map { it.trim().lowercase() } // Normalizar géneros
+                    .any { it == normalizedCategory } // Comparar géneros normalizados
+            }
+        }
+
+        movieAdapter.updateMovies(filteredMovies) // Actualizar el RecyclerView con las películas filtradas
     }
 }
