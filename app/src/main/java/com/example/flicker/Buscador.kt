@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -31,7 +32,18 @@ class Buscador : Fragment() {
         etBuscar = view.findViewById(R.id.etSearch)
         btnBuscar = view.findViewById(R.id.btnSearch)
 
+        // Acción al presionar el botón de búsqueda
         btnBuscar.setOnClickListener { buscarPeliculas() }
+
+        // Acción al presionar "Intro" en el teclado
+        etBuscar.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
+                buscarPeliculas()
+                true
+            } else {
+                false
+            }
+        }
 
         return view
     }
