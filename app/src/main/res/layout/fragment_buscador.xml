@@ -19,7 +19,9 @@
         android:hint="Buscar..."
         android:drawablePadding="8dp"
         android:padding="12dp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="@android:color/transparent"
+        android:imeOptions="actionSearch" />
 
     <!-- Botón de buscar -->
     <ImageButton
@@ -30,5 +32,6 @@
         android:src="@drawable/ic_search"
         android:contentDescription="Buscar"
         android:padding="10dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
         app:tint="@color/md_theme_primary" />
 </LinearLayout>
