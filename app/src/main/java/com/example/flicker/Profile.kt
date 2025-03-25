@@ -1,11 +1,13 @@
 package com.example.flicker
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -49,6 +51,12 @@ class Profile : Fragment() {
             }
             // Guardar el estado en SharedPreferences
             sharedPreferences.edit().putBoolean("isDarkMode", isChecked).apply()
+        }
+
+        val btnDiagrams = rootView.findViewById<ImageButton>(R.id.btnDiagrams)
+        btnDiagrams.setOnClickListener {
+            val intent = Intent(requireContext(), DiagramsActivity::class.java)
+            startActivity(intent)
         }
 
         return rootView
