@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flicker.Detail
 import com.example.flicker.R
 import com.example.flicker.data.RetrofitServiceFactory
+import com.example.flicker.data.SettingsDataStore
 import com.example.flicker.data.model.MovieItem
 import kotlinx.coroutines.launch
 
@@ -20,6 +21,7 @@ abstract class BaseMoviesFragment : Fragment() {
 
     protected lateinit var movieAdapter: MovieAdapter
     protected var allMovies: List<MovieItem> = emptyList() // Lista completa de películas
+    private lateinit var settingsDataStore: SettingsDataStore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +29,8 @@ abstract class BaseMoviesFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(getLayoutResId(), container, false)
         setupRecyclerView(view)
+
+        settingsDataStore = SettingsDataStore(requireContext())
         return view
     }
 
@@ -48,6 +52,14 @@ abstract class BaseMoviesFragment : Fragment() {
 
     private fun onMovieItemClick(movie: MovieItem) {
         Log.d("BaseMoviesFragment", "Clic en la película: ${movie.title}")
+
+        lifecycleScope.launch {
+            val categories = movie.genre.split(", ").map { it.trim() }
+            for (category in categories) {
+                settingsDataStore.incrementCategoryClick(category)
+            }
+        }
+
         openDetailFragment(movie)
     }
 
@@ -141,5 +153,13 @@ abstract class BaseMoviesFragment : Fragment() {
         }
 
         movieAdapter.updateMovies(filteredMovies) // Actualizar el RecyclerView con las películas filtradas
+
+        lifecycleScope.launch {
+            for (movie in filteredMovies) {
+                settingsDataStore.incrementFilterCount(normalizedCategory)
+                Log.d("BaseMoviesFragment", "Filtro aplicado: $normalizedCategory a la peliuclal: ${movie.title}")
+            }
+            Log.d("BaseMoviesFragment", "Filtro aplicado: $category")
+        }
     }
 }

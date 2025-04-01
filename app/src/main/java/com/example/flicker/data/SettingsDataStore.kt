@@ -11,31 +11,93 @@ import kotlinx.coroutines.flow.map
 
 private const val LAYOUT_PREFERENCES_NAME = "layout_preferences"
 
-// Acces a DataStore
+// Extensión para acceder al DataStore
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = LAYOUT_PREFERENCES_NAME)
 
 class SettingsDataStore(context: Context) {
 
-    private val dataStore = context.dataStore
-
-    // Clau per desar el número de clics a detail de pelicules
-    private val CLICKS_KEY = intPreferencesKey("detail_item_clicks")
+    val dataStore = context.dataStore
 
     /**
-     * Guarda el nombre de clics a DataStore.
+     * Guarda el número de clics para una categoría específica.
      */
-    suspend fun saveClicksCount(clicks: Int) {
+    suspend fun saveCategoryClick(category: String, clicks: Int) {
+        val categoryKey = intPreferencesKey("clicks_$category")
         dataStore.edit { preferences ->
-            preferences[CLICKS_KEY] = clicks
+            preferences[categoryKey] = clicks
         }
     }
 
     /**
-     * Recupera el nombre de clicks de DataStore.
+     * Recupera el número de clics para una categoría específica.
      */
-    fun getClicksCount(): Flow<Int> {
+    fun getCategoryClicks(category: String): Flow<Int> {
+        val categoryKey = intPreferencesKey("clicks_$category")
         return dataStore.data.map { preferences ->
-            preferences[CLICKS_KEY] ?: 0 // Retorna 0 si no hi han clicks
+            preferences[categoryKey] ?: 0 // Devuelve 0 si no hay valor guardado
+        }
+    }
+
+    /**
+     * Incrementa el contador de clics para una categoría específica.
+     */
+    suspend fun incrementCategoryClick(category: String) {
+        val categoryKey = intPreferencesKey("clicks_$category")
+        dataStore.edit { preferences ->
+            val currentClicks = preferences[categoryKey] ?: 0
+            preferences[categoryKey] = currentClicks + 1
+        }
+    }
+
+    // Clave para almacenar el número de filtros por categoría
+    private fun getFilterKey(category: String): Preferences.Key<Int> {
+        return intPreferencesKey("filter_count_$category")
+    }
+
+    /**
+     * Guarda el número de filtros para una categoría específica.
+     */
+    suspend fun saveFilterCount(category: String, count: Int) {
+        dataStore.edit { preferences ->
+            preferences[getFilterKey(category)] = count
+        }
+    }
+
+    /**
+     * Recupera el número de filtros para una categoría específica.
+     */
+    fun getFilterCount(category: String): Flow<Int> {
+        return dataStore.data.map { preferences ->
+            preferences[getFilterKey(category)] ?: 0 // Devuelve 0 si no hay valor guardado
+        }
+    }
+
+    /**
+     * Incrementa el contador de filtros para una categoría específica.
+     */
+    suspend fun incrementFilterCount(category: String) {
+        dataStore.edit { preferences ->
+            val currentCount = preferences[getFilterKey(category)] ?: 0
+            preferences[getFilterKey(category)] = currentCount + 1
+        }
+    }
+
+    /**
+     * Inicializa datos ficticios para las categorías.
+     */
+    suspend fun initializeDummyData() {
+        val categories = listOf("animation", "comedy", "action", "adventure")
+
+        // Simular clics para cada categoría
+        for (category in categories) {
+            val clicks = (1..10).random() // Número aleatorio de clics entre 1 y 10
+            saveCategoryClick(category, clicks)
+        }
+
+        // Simular filtros aplicados para cada categoría
+        for (category in categories) {
+            val filters = (1..5).random() // Número aleatorio de filtros entre 1 y 5
+            saveFilterCount(category, filters)
         }
     }
 }

@@ -7,8 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.flicker.data.SettingsDataStore
+import kotlinx.coroutines.launch
 
 class Login : AppCompatActivity() {
+    private lateinit var settingsDataStore: SettingsDataStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,6 +34,14 @@ class Login : AppCompatActivity() {
         iniciar.setOnClickListener {
             val intent = Intent(this, Main::class.java)
             startActivity(intent)
+        }
+
+        // Inicializar SettingsDataStore
+        settingsDataStore = SettingsDataStore(this)
+
+        // Inicializar datos ficticios
+        lifecycleScope.launch {
+            settingsDataStore.initializeDummyData()
         }
     }
 }
