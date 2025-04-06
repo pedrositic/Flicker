@@ -11,7 +11,7 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estadísticas de uso"
+        android:text="Categories visitades i filtrades"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#333333"
@@ -27,12 +27,23 @@
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="16dp" />
 
+    <TextView
+        android:id="@+id/titleBarchart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Pelicul·les filtrades per categoria"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/pieChart"/>
+
     <!-- Bar Chart -->
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChart"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_below="@id/pieChart"
+        android:layout_below="@id/titleBarchart"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="16dp" />
 
