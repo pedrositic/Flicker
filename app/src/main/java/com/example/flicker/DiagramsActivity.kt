@@ -33,8 +33,9 @@ class DiagramsActivity : AppCompatActivity() {
         // Inicializar SettingsDataStore
         settingsDataStore = SettingsDataStore(this)
 
-        // Referenciar el BarChart
+        // Referenciar los gráficos
         barChart = findViewById(R.id.barChart)
+        pieChart = findViewById(R.id.pieChart)
 
         // Cargar y mostrar los datos en el log
         lifecycleScope.launch {
@@ -43,6 +44,7 @@ class DiagramsActivity : AppCompatActivity() {
 
             // Renderizar los diagramas
             setupBarChart(categoryMetricsMap)
+            setupPieChart(categoryMetricsMap)
         }
     }
 
