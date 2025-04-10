@@ -56,6 +56,17 @@
             android:inputType="textPassword"
             android:padding="12dp" />
 
+        <!-- Campo de Contraseña -->
+        <EditText
+            android:id="@+id/password_check"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@color/md_theme_surfaceVariant"
+            android:hint="Comprova la contrasenya"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
         <!-- Botón de Iniciar Sesión -->
         <Button
             android:id="@+id/login_button"
