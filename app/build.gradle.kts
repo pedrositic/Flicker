@@ -39,21 +39,47 @@ android {
 }
 
 dependencies {
+    // Glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
-    implementation ("androidx.datastore:datastore-preferences:1.0.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Lifecycle (LiveData y ViewModel)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Core KTX
     implementation(libs.androidx.core.ktx)
+
+    // AppCompat
     implementation(libs.androidx.appcompat)
+
+    // Material Design
     implementation(libs.material)
+
+    // Activity KTX
     implementation(libs.androidx.activity)
+
+    // ConstraintLayout
     implementation(libs.androidx.constraintlayout)
-    implementation (libs.retrofit2.converter.moshi)
+
+    // Retrofit (Gson y Moshi Converters)
     implementation(libs.retrofit2.converter.gson)
+    implementation(libs.retrofit2.converter.moshi)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
-    implementation (libs.kotlinx.coroutines.android)
-    implementation (libs.mpandroidchart)
+    // Kotlin Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    // MPAndroidChart
+    implementation(libs.mpandroidchart)
+
+    // Pruebas unitarias
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.core.testing)
+
+    // Pruebas instrumentadas
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
