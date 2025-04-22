@@ -14,7 +14,7 @@ import com.example.flicker.validations.RegisterViewModel
 
 class Register : AppCompatActivity() {
 
-    private lateinit var viewModel: RegisterViewModel
+    private lateinit var viewModel: com.example.flicker.validations.RegisterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class Register : AppCompatActivity() {
         }
 
         // Inicializar ViewModel
-        viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(com.example.flicker.validations.RegisterViewModel::class.java)
 
         // Referencias a los campos de entrada
         val nameInput = findViewById<EditText>(R.id.name_input)

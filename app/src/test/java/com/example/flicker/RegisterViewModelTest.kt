@@ -1,4 +1,4 @@
-package com.example.flicker.validations
+package com.example.flicker
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorExtension
 import org.junit.Assert.*

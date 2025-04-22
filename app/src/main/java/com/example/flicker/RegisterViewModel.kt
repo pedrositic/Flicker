@@ -1,4 +1,4 @@
-package com.example.flicker.validations
+package com.example.flicker
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

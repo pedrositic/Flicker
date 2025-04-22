@@ -77,7 +77,7 @@ dependencies {
 
     // Pruebas unitarias
     testImplementation(libs.junit)
-    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.androidx.core.ktx)
 
     // Pruebas instrumentadas
     androidTestImplementation(libs.androidx.junit)
