@@ -31,15 +31,22 @@ class RegisterViewModel : ViewModel() {
     }
 
     /**
-     * Valida el campo de correo electrónico.
+     * Valida el campo de correo electrónico usando una expresión regular propia
+     * (porque Patterns.EMAIL_ADDRESS no funciona en pruebas locales)
      */
     fun validateEmail(email: String) {
         when {
             email.isEmpty() -> _emailError.value = "El correu electrònic no pot estar buit."
-            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() ->
-                _emailError.value = "Format de correu electrònic incorrecte."
+
+            !isValidEmail(email) -> _emailError.value = "Format de correu electrònic incorrecte."
+
             else -> _emailError.value = null
         }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        val emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+".toRegex()
+        return email.matches(emailRegex)
     }
 
     /**

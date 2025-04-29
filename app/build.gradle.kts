@@ -26,13 +26,16 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
     }
@@ -45,9 +48,9 @@ dependencies {
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-    // Lifecycle (LiveData y ViewModel)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
+    // Lifecycle (usamos versión 2.2.0 compatible)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // Core KTX
     implementation(libs.androidx.core.ktx)
@@ -75,12 +78,12 @@ dependencies {
     // MPAndroidChart
     implementation(libs.mpandroidchart)
 
-    // Pruebas unitarias
+    // 🔧 PRUEBAS UNITARIAS
     testImplementation(libs.junit)
     testImplementation(libs.androidx.core.ktx)
     testImplementation(libs.core.testing)
 
-    // Pruebas instrumentadas
+    // 📱 PRUEBAS INSTRUMENTADAS
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")

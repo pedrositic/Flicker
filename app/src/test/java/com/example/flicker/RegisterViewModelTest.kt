@@ -1,5 +1,6 @@
 package com.example.flicker
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -7,7 +8,15 @@ import org.junit.Test
 
 class RegisterViewModelTest {
 
-    private val viewModel = RegisterViewModel()
+    @get:Rule
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    private lateinit var viewModel: RegisterViewModel
+
+    @Before
+    fun setUp() {
+        viewModel = RegisterViewModel()
+    }
 
     // Validación del campo "Nom d'Usuari"
     @Test
