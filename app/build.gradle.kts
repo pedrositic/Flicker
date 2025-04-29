@@ -78,8 +78,11 @@ dependencies {
     // Pruebas unitarias
     testImplementation(libs.junit)
     testImplementation(libs.androidx.core.ktx)
+    testImplementation(libs.core.testing)
 
     // Pruebas instrumentadas
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")
+    androidTestImplementation("org.hamcrest:hamcrest-library:2.2")
 }
