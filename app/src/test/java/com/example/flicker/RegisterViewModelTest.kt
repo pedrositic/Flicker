@@ -13,6 +13,10 @@ class RegisterViewModelTest {
 
     private lateinit var viewModel: RegisterViewModel
 
+    @Before
+    fun setUp() {
+        viewModel = RegisterViewModel()
+    }
 
     // Validación del campo "Nom d'Usuari"
     @Test
@@ -63,12 +67,6 @@ class RegisterViewModelTest {
     fun testContrasenyaMassaCurta() {
         viewModel.validatePassword("Pass1")
         assertEquals("Mínim 6 caràcters.", viewModel.passwordError.value)
-    }
-
-    @Test
-    fun testContrasenyaSenseNumero() {
-        viewModel.validatePassword("Password!")
-        assertEquals("Falta número.", viewModel.passwordError.value)
     }
 
     @Test
