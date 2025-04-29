@@ -1,11 +1,15 @@
 package com.example.flicker
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 class RegisterViewModelTest {
+
+    @get:Rule
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private val viewModel = RegisterViewModel()
 
@@ -58,6 +62,12 @@ class RegisterViewModelTest {
     fun testContrasenyaMassaCurta() {
         viewModel.validatePassword("Pass1")
         assertEquals("Mínim 6 caràcters.", viewModel.passwordError.value)
+    }
+
+    @Test
+    fun testContrasenyaSenseNumero() {
+        viewModel.validatePassword("Password!")
+        assertEquals("Falta número.", viewModel.passwordError.value)
     }
 
     @Test

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class RegisterViewModel : ViewModel() {
 
-    // LiveData para errores de validación
+    // LiveData para manejar errores
     private val _usernameError = MutableLiveData<String?>()
     val usernameError: LiveData<String?> = _usernameError
 
@@ -51,8 +51,7 @@ class RegisterViewModel : ViewModel() {
             password.length < 6 -> _passwordError.value = "Mínim 6 caràcters."
             !password.any { it.isUpperCase() } -> _passwordError.value = "Falta majúscula."
             !password.any { it.isDigit() } -> _passwordError.value = "Falta número."
-            !password.any { !it.isLetterOrDigit() } ->
-                _passwordError.value = "Falta caràcter especial."
+            !password.any { !it.isLetterOrDigit() } -> _passwordError.value = "Falta caràcter especial."
             else -> _passwordError.value = null
         }
     }

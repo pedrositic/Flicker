@@ -26,21 +26,21 @@ class Register : AppCompatActivity() {
         val registerButton = findViewById<Button>(R.id.login_button)
 
         // Configurar listeners para validar campos en tiempo real
-        nameInput.addTextChangedListener {
-            viewModel.validateUsername(it.toString())
+        nameInput.addTextChangedListener { text ->
+            viewModel.validateUsername(text.toString())
         }
 
-        emailInput.addTextChangedListener {
-            viewModel.validateEmail(it.toString())
+        emailInput.addTextChangedListener { text ->
+            viewModel.validateEmail(text.toString())
         }
 
-        passwordInput.addTextChangedListener {
-            viewModel.validatePassword(it.toString())
+        passwordInput.addTextChangedListener { text ->
+            viewModel.validatePassword(text.toString())
         }
 
-        confirmPasswordInput.addTextChangedListener {
+        confirmPasswordInput.addTextChangedListener { text ->
             val password = passwordInput.text.toString()
-            viewModel.validateConfirmPassword(password, it.toString())
+            viewModel.validateConfirmPassword(password, text.toString())
         }
 
         // Observar errores del ViewModel
