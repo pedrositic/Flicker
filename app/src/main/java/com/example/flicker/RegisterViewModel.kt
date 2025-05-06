@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class RegisterViewModel : ViewModel() {
 
-    // LiveData para manejar errores
     private val _usernameError = MutableLiveData<String?>()
     val usernameError: LiveData<String?> = _usernameError
 
@@ -19,9 +18,6 @@ class RegisterViewModel : ViewModel() {
     private val _confirmPasswordError = MutableLiveData<String?>()
     val confirmPasswordError: LiveData<String?> = _confirmPasswordError
 
-    /**
-     * Valida el campo de nombre de usuario.
-     */
     fun validateUsername(username: String) {
         when {
             username.isEmpty() -> _usernameError.value = "El nom d'usuari no pot estar buit."
@@ -30,10 +26,6 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Valida el campo de correo electrónico usando una expresión regular propia
-     * (porque Patterns.EMAIL_ADDRESS no funciona en pruebas locales)
-     */
     fun validateEmail(email: String) {
         when {
             email.isEmpty() -> _emailError.value = "El correu electrònic no pot estar buit."
@@ -49,9 +41,6 @@ class RegisterViewModel : ViewModel() {
         return email.matches(emailRegex)
     }
 
-    /**
-     * Valida el campo de contraseña.
-     */
     fun validatePassword(password: String) {
         when {
             password.isEmpty() -> _passwordError.value = "La contrasenya no pot estar buida."
@@ -63,9 +52,6 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Valida que las contraseñas coincidan.
-     */
     fun validateConfirmPassword(password: String, confirmPassword: String) {
         if (password != confirmPassword) {
             _confirmPasswordError.value = "Les contrasenyes no coincideixen."

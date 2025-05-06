@@ -18,7 +18,6 @@ class RegisterViewModelTest {
         viewModel = RegisterViewModel()
     }
 
-    // Validación del campo "Nom d'Usuari"
     @Test
     fun testNomUsuariBuit() {
         viewModel.validateUsername("")
@@ -37,7 +36,6 @@ class RegisterViewModelTest {
         assertNull(viewModel.usernameError.value)
     }
 
-    // Validación del campo "Correu Electrònic"
     @Test
     fun testCorreuBuit() {
         viewModel.validateEmail("")
@@ -56,7 +54,6 @@ class RegisterViewModelTest {
         assertNull(viewModel.emailError.value)
     }
 
-    // Validación del campo "Contrasenya"
     @Test
     fun testContrasenyaBuida() {
         viewModel.validatePassword("")
@@ -75,7 +72,6 @@ class RegisterViewModelTest {
         assertNull(viewModel.passwordError.value)
     }
 
-    // Validación de coincidencia de contraseñas
     @Test
     fun testContrasenyesNoCoincidents() {
         viewModel.validateConfirmPassword("123456", "654321")
